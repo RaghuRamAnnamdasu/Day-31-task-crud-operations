@@ -1,0 +1,54 @@
+.App{
+  /* boxrder : 5px solid green; */
+  height: 100vh;
+  overflow: auto;
+  /* padding: 20px !important; */
+}
+
+.App h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: azure;
+}
+
+.studentFieldHeader,
+.mentorFieldHeader {
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.formWrapper {
+  background-color: #d1e7dd;
+  height: 100vh;
+}
+
+.studentFieldWrapper,
+.mentorFieldWrapper {
+  padding: 10px;
+}
+
+tr td:last-child {
+  display: flex;
+  justify-content: center;
+}
+
+.displayTableWrapper {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  padding-top: 12px;
+}
+
+.studentTable,
+.mentorTable {
+  height: 80%;
+}
+
+.divider {
+  color: black;
+  margin: 0 !important;
+}
+
+.pageWrapper {
+  background-color: cadetblue;
+}
