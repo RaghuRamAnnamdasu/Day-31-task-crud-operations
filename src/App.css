@@ -1,6 +1,7 @@
 .App{
   /* boxrder : 5px solid green; */
-  height: 100vh;
+  min-height: 100vh;
+  max-height: fit-content;
   overflow: auto;
   /* padding: 20px !important; */
 }
@@ -20,7 +21,8 @@
 
 .formWrapper {
   background-color: #d1e7dd;
-  height: 100vh;
+  min-height: 100vh;
+  max-height : 100%;
 }
 
 .studentFieldWrapper,
@@ -33,6 +35,10 @@ tr td:last-child {
   justify-content: center;
 }
 
+table{
+  overflow: auto !important;
+}
+
 .displayTableWrapper {
   display: grid;
   grid-template-rows: 50% 50%;
@@ -42,6 +48,8 @@ tr td:last-child {
 .studentTable,
 .mentorTable {
   height: 80%;
+  overflow: auto;
+  width : 100%
 }
 
 .divider {

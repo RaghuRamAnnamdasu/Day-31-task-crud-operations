@@ -29,7 +29,7 @@ export function MentorTable({ mentorArray, setMentorArray }) {
                   <td>{value.email}</td>
                   <td>{value.batch}</td>
                   <td>
-                    <MentorEditModal value={value} index={index} mentorArray={mentorArray} setMentorArray={setMentorArray} />
+                    <MentorEditModal value={value} index={index} mentorArray={mentorArray} setMentorArray={setMentorArray}/>
                     {/* &nbsp;&nbsp;&nbsp;&nbsp; */}
                     <button className="btn" onClick={() => {
                       temp1.splice(index, 1);
