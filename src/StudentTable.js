@@ -2,8 +2,16 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { StudentEditModal } from './StudentEditModal';
+import { useState, useEffect } from "react";
 
-export function StudentTable({ studentArray, setStudentArray }) {
+export function StudentTable({ studentArray,getStudentDataFunction }) {
+
+  
+  useEffect(()=>{
+    getStudentDataFunction();
+  },[]);
+
+
   const styles = { textAlign: "center" };
   let temp = [...studentArray];
   return (
@@ -29,11 +37,10 @@ export function StudentTable({ studentArray, setStudentArray }) {
                   <td>{value.batch}</td>
                   <td>{value.mentor}</td>
                   <td>
-                    <StudentEditModal value={value} index={index} studentArray={studentArray} setStudentArray={setStudentArray} />
-                    {/* &nbsp;&nbsp;&nbsp;&nbsp; */}
+                    <StudentEditModal value={value} id={value.id} getStudentDataFunction={getStudentDataFunction}/>
                     <button className="btn" onClick={() => {
-                      temp.splice(index, 1);
-                      setStudentArray(temp);
+                      fetch(`https://62a97085ec36bf40bdb787b6.mockapi.io/StudentList/${value.id}`,{method : "DELETE"})
+                      .then(()=>getStudentDataFunction())
                     }}><FontAwesomeIcon icon={faTrash} /></button>
                   </td>
                 </tr>

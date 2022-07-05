@@ -1,0 +1,42 @@
+[
+    {
+        "id" : "1",
+        "name": "Raghu", 
+        "batch": "35",
+        "mentor": "Raghav"
+    },  
+    {
+        "id" : "2",
+        "name": "Pravallika", 
+        "batch": "34", 
+        "mentor": "Thirupathi"
+    },
+    {
+        "id" : "3",
+        "name": "Neeraj", 
+        "batch": "33", 
+        "mentor": "Roopan"
+    }
+]
+
+
+[
+    {
+        "id" : "1",
+        "name": "Raghav", 
+        "email": "raghav@gmail.com",
+        "batch": "35"
+    },  
+    {
+        "id" : "2",
+        "name": "Thirupathi", 
+        "email": "thirupathi@gmail.com", 
+        "batch": "34"
+    },
+    {
+        "id" : "3",
+        "name": "Roopan", 
+        "email": "roopan@gmail.com", 
+        "batch": "33"
+    }
+]

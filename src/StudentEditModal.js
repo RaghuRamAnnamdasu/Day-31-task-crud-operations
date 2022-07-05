@@ -2,18 +2,29 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 
-export function StudentEditModal({ value, index, studentArray, setStudentArray }) {
+export function StudentEditModal({ value, id, getStudentDataFunction }) {
+
+  function studentEdit(object){
+    fetch(`https://62a97085ec36bf40bdb787b6.mockapi.io/StudentList/${id}`,
+      {
+        method : "PUT",
+        body : JSON.stringify(object),
+        headers : {"Content-Type" : "application/json"}
+      }
+    ).then(()=>getStudentDataFunction())
+  }
+
+
   let tempStudentObject = { ...value };
-  let temp = [...studentArray];
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    temp.splice(index, 1, tempStudentObject);
-    setStudentArray(temp);
+    studentEdit(tempStudentObject);
   };
   return (
     <div>
-      <button type="button" className="btn" data-bs-toggle="modal" data-bs-target={`#myModal${index}`}><FontAwesomeIcon icon={faPen} /></button>
-      <div className="modal fade" id={`myModal${index}`} role="dialog">
+      <button type="button" className="btn" data-bs-toggle="modal" data-bs-target={`#myModal${id}`}><FontAwesomeIcon icon={faPen} /></button>
+      <div className="modal fade" id={`myModal${id}`} role="dialog">
         <div className="modal-dialog">
           <div className='modal-content'>
             <div className="modal-header">

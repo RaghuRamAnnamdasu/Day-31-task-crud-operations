@@ -2,20 +2,30 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 
-export function MentorEditModal({ value, index, mentorArray, setMentorArray }) {
+export function MentorEditModal({ value, id, getMentorDataFunction }) {
+
+
+  function mentorEdit(object){
+    fetch(`https://62a97085ec36bf40bdb787b6.mockapi.io/MentorList/${id}`,
+      {
+        method : "PUT",
+        body : JSON.stringify(object),
+        headers : {"Content-Type" : "application/json"}
+      }
+    ).then(()=>getMentorDataFunction())
+  }
+
+
   let tempMentorObject = { ...value };
-  let tempIndex = index;
-  let temp = [...mentorArray];
+  
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    temp.splice(index, 1, tempMentorObject);
-    setMentorArray(temp);
-    evt.target.reset();
+    mentorEdit(tempMentorObject);
   };
   return (
     <div>
-      <button type="button" className="btn" data-bs-toggle="modal" data-bs-target={`#mentorModal${index}`}><FontAwesomeIcon icon={faPen} /></button>
-      <div className="modal fade" id={`mentorModal${index}`} role="dialog">
+      <button type="button" className="btn" data-bs-toggle="modal" data-bs-target={`#mentorModal${id}`}><FontAwesomeIcon icon={faPen} /></button>
+      <div className="modal fade" id={`mentorModal${id}`} role="dialog">
         <div className="modal-dialog">
           <div className='modal-content'>
             <div className="modal-header">
