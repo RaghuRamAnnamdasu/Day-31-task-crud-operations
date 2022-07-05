@@ -20,7 +20,7 @@ export function StudentTable({ studentArray, setStudentArray }) {
               <th className="col-2"></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody> 
             {studentArray.map((value, index) => {
               return (
                 <tr key={index}>

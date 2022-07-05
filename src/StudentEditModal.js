@@ -17,7 +17,7 @@ export function StudentEditModal({ value, index, studentArray, setStudentArray }
         <div className="modal-dialog">
           <div className='modal-content'>
             <div className="modal-header">
-              <h2>Edit Details</h2>
+              <h2>Edit Details</h2> 
               <button type="button" className="close" data-bs-dismiss="modal">&times;</button>
             </div>
             <div className='modal-body'>

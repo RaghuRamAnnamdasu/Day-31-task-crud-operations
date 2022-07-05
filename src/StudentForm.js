@@ -19,7 +19,7 @@ export function StudentForm({ studentArray, setStudentArray }) {
         <label htmlFor="mentorDetails" className="form-label">Mentor:</label>
         <input type="text" className="form-control mb-3" id="mentorDetails" placeholder="Enter mentor name" name="mentorName" onBlur={(evt) => { tempStudentObject.mentor = evt.target.value; }} required />
         <button type="submit" className="btn btn-primary">Submit</button>
-      </form>
+      </form> 
     </div>
   );
 }

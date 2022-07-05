@@ -22,7 +22,7 @@ export function MentorEditModal({ value, index, mentorArray, setMentorArray }) {
               <h2>Edit Details</h2>
               <button type="button" className="close" data-bs-dismiss="modal">&times;</button>
             </div>
-            <div className='modal-body'>
+            <div className='modal-body'> 
               <form onSubmit={handleSubmit}>
                 <label htmlFor="mentorName1" className="form-label">Mentor Name:</label>
                 <input type="text" className="form-control mb-3" id="mentorName1" placeholder="Enter mentor name" name="mentorName1" onChange={(evt) => { tempMentorObject.name = evt.target.value; }} defaultValue={tempMentorObject.name}/>

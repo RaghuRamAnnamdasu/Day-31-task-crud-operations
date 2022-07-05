@@ -19,6 +19,6 @@ export function MentorForm({ mentorArray, setMentorArray }) {
         <input type="text" className="form-control mb-3" id="batchDetails" placeholder="Enter batch number" name="batch" onBlur={(evt) => { tempMentorObject.batch = evt.target.value; }} required />
         <button type="submit" className="btn btn-primary">Submit</button>
       </form>
-    </div>
+    </div> 
   );
 }

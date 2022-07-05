@@ -16,7 +16,7 @@ function App() {
   const [mentorArray,setMentorArray]=useState([{name: "Raghav", email: "raghav@gmail.com", batch: 34}]);
   return (
     <div className="App container-fluid">
-      <div className="row pageWrapper">
+      <div className="row pageWrapper"> 
         <div className = "col-md-3 formWrapper">
           <StudentForm studentArray = {studentArray} setStudentArray={setStudentArray}/>
           <hr className='divider'/>

@@ -19,7 +19,7 @@ export function MentorTable({ mentorArray, setMentorArray }) {
               <th scope="col" className="col-3">Batch</th>
               <th className="col-2"></th>
             </tr>
-          </thead>
+          </thead> 
           <tbody>
             {mentorArray.map((value, index) => {
               return (
