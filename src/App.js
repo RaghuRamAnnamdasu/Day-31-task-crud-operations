@@ -1,8 +1,7 @@
 import './App.css';
 // import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.min.js";
-// import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
+import "bootstrap/dist/js/bootstrap.min.js"
 import React, {useState} from "react";
 import { MentorTable } from './MentorTable';
 import { StudentTable } from './StudentTable';
@@ -22,7 +21,7 @@ function App() {
           <hr className='divider'/>
           <MentorForm mentorArray = {mentorArray} setMentorArray={setMentorArray}/>
         </div>
-        <div className = "col-md-7 offset-md-1 displayTableWrapper">
+        <div className = "col-md-7 offset-1 displayTableWrapper">
           <StudentTable studentArray={studentArray} setStudentArray={setStudentArray}/>
           <MentorTable mentorArray={mentorArray}setMentorArray={setMentorArray}/>
         </div>
