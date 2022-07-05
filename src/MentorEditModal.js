@@ -2,21 +2,9 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 
-export function MentorEditModal({ value, id, getMentorDataFunction }) {
-
-
-  function mentorEdit(object){
-    fetch(`https://62a97085ec36bf40bdb787b6.mockapi.io/MentorList/${id}`,
-      {
-        method : "PUT",
-        body : JSON.stringify(object),
-        headers : {"Content-Type" : "application/json"}
-      }
-    ).then(()=>getMentorDataFunction())
-  }
-
-
+export function MentorEditModal({ value, index, mentorArray, setMentorArray }) {
   let tempMentorObject = { ...value };
+  let tempIndex = index;
   let temp = [...mentorArray];
   const handleSubmit = (evt) => {
     evt.preventDefault();

@@ -1,23 +1,11 @@
 import React from "react";
 
-export function StudentForm({ getStudentDataFunction }) {
-
-  function studentAddition(object){
-    fetch(`https://62a97085ec36bf40bdb787b6.mockapi.io/StudentList/`,
-      {
-        method : "POST",
-        body : JSON.stringify(object),
-        headers : {"Content-Type":"application/json"}
-      }
-    ).then(()=>getStudentDataFunction());
-  }
-
-
+export function StudentForm({ studentArray, setStudentArray }) {
   var tempStudentObject = {};
   const handleSubmit = (evt) => {
     evt.preventDefault();
     evt.target.reset();
-    studentAddition(tempStudentObject);
+    setStudentArray([...studentArray, tempStudentObject]);
   };
 
   return (

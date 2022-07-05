@@ -2,14 +2,8 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { MentorEditModal } from './MentorEditModal';
-import { useEffect } from "react"; 
 
-export function MentorTable({ mentorArray,getMentorDataFunction }) {
-  
-  useEffect(()=>{
-    getMentorDataFunction();
-  },[]);
-
+export function MentorTable({ mentorArray, setMentorArray }) {
   const styles = { textAlign: "center" };
   let temp1 = [...mentorArray];
   return (
@@ -35,11 +29,11 @@ export function MentorTable({ mentorArray,getMentorDataFunction }) {
                   <td>{value.email}</td>
                   <td>{value.batch}</td>
                   <td>
-                    <MentorEditModal value={value} index={index} mentorArray={mentorArray} setMentorArray={setMentorArray} />
+                    <MentorEditModal value={value} index={index} mentorArray={mentorArray} setMentorArray={setMentorArray}/>
                     {/* &nbsp;&nbsp;&nbsp;&nbsp; */}
                     <button className="btn" onClick={() => {
-                      fetch(`https://62a97085ec36bf40bdb787b6.mockapi.io/MentorList/${value.id}`,{method : "DELETE"})
-                      .then(()=>getMentorDataFunction())
+                      temp1.splice(index, 1);
+                      setMentorArray(temp1);
                     }}><FontAwesomeIcon icon={faTrash} />
                     </button>
                   </td>

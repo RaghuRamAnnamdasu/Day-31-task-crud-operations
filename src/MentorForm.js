@@ -1,23 +1,11 @@
 import React from "react";
 
-export function MentorForm({ getMentorDataFunction}) {
-
-  function mentorAddition(object){
-    fetch(`https://62a97085ec36bf40bdb787b6.mockapi.io/MentorList/`,
-      {
-        method : "POST",
-        body : JSON.stringify(object),
-        headers : {"Content-Type":"application/json"}
-      }
-    ).then(()=>getMentorDataFunction());
-  }
-
-
+export function MentorForm({ mentorArray, setMentorArray }) {
   var tempMentorObject = {};
   const handleSubmit = (evt) => {
     evt.preventDefault();
     evt.target.reset();
-    mentorAddition(tempMentorObject);
+    setMentorArray([...mentorArray, tempMentorObject]);
   };
   return (
     <div className="row mentorFieldWrapper">
