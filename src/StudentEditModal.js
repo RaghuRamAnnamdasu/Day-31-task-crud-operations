@@ -12,13 +12,8 @@ export function StudentEditModal({ value, index, studentArray, setStudentArray }
   };
   return (
     <div>
-<<<<<<< HEAD
-      <button type="button" className="btn" data-bs-toggle="modal" data-bs-target="#myModal"><FontAwesomeIcon icon={faPen} /></button>
-      <div className="modal fade" id="myModal" role="dialog">
-=======
       <button type="button" className="btn" data-bs-toggle="modal" data-bs-target={`#myModal${index}`}><FontAwesomeIcon icon={faPen} /></button>
       <div className="modal fade" id={`myModal${index}`} role="dialog">
->>>>>>> parent of bcecf6f (first commit)
         <div className="modal-dialog">
           <div className='modal-content'>
             <div className="modal-header">
